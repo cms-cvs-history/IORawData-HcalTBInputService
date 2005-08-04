@@ -1,0 +1,14 @@
+process PROD  = {
+
+	source = HcalTBInputService { 
+		untracked string fileName = 'tb04_hf_electron_16322.root'
+		untracked int32 maxEvents = 5
+//		untracked int32 hcalFedOffset = 559
+	}
+
+	module out = PoolOutputModule {	
+		untracked string fileName = 'Persist.root'
+	}
+
+	path p = { out }
+}
