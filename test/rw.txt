@@ -1,9 +1,10 @@
 process PROD  = {
 
 	source = HcalTBInputService { 
-		untracked string fileName = 'tb04_hf_electron_16322.root'
+		untracked vstring fileNames = { 'tb04_hf_electron_16322.root' }
 		untracked int32 maxEvents = 5
 //		untracked int32 hcalFedOffset = 559
+                untracked vstring streams = { 'HCAL_DCC020:20','HCAL_Trigger' }
 	}
 
 	module out = PoolOutputModule {	
